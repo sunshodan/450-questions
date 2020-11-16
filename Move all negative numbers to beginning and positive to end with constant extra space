@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define long long ll
+int main()
+{
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    #endif 
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    // int i=1;
+    while(t--)
+    {
+    	int n;
+    	cin>>n;
+    	vector<int> arr(n);
+    	for(int i=0;i<n;i++)
+    	{
+    		cin>>arr[i];
+    	}
+    	int point=0;
+    	vector<int> ans(n);
+    	for(int i=0;i<n;i++)
+    	{
+    		if(arr[i]<0)
+    		{
+    			ans[point]=arr[i];
+    			point++;
+    		}
+    	}
+    	point=n-1;
+    	for(int i=n-1;i>=0;i--)
+    	{
+    		if(arr[i]>=0)
+    		{
+    			ans[point]=arr[i];
+    			point--;
+    		}
+    	}
+    	for(int i=0;i<n;i++)
+    	{
+    		cout<<ans[i]<<" ";
+    	}
+    }
+}
